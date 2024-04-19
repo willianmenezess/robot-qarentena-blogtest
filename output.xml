@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-04-17T22:13:02.158513" rpa="false" schemaversion="5">
+<suite id="s1" name="TestBlog" source="/home/pc/Documentos/Robot-Framework/QArentenaBlogTest/TestBlog.robot">
+<test id="s1-t1" name="Caso de Teste 01: Pesquisar um post" line="8">
+<kw name="Acessar a página do blog" owner="ResourceBlog" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:02.337926" level="INFO">Opening browser 'Chrome' to base url 'https://robotizandotestes.blogspot.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-17T22:13:02.337527" elapsed="6.924862"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:09.289264" level="INFO">Page title is 'Robotizando Testes'.</msg>
+<arg>Robotizando Testes</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-04-17T22:13:09.263891" elapsed="0.025933"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:02.336368" elapsed="6.953963"/>
+</kw>
+<kw name="Pesquisar por um post com &quot;Novo Curso: Robot Framework com Playwright e GitHub Actions&quot;" owner="ResourceBlog" source_name="Pesquisar por um post com &quot;${TEXT_SEARCH}&quot;">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_SEARCH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-17T22:13:09.292579" elapsed="0.084132"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:09.377636" level="INFO">Clicking button 'class=search-expand.touch-icon-button'.</msg>
+<arg>${BTN_SEARCH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-17T22:13:09.377133" elapsed="0.166554"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:09.544554" level="INFO">Typing text 'Novo Curso: Robot Framework com Playwright e GitHub Actions' into text field 'name=q'.</msg>
+<arg>${INPUT_SEARCH}</arg>
+<arg>${TEXT_SEARCH}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-17T22:13:09.544085" elapsed="0.479650"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:10.024775" level="INFO">Clicking element 'class=search-action.flat-button'.</msg>
+<arg>${SUBMIT_SEARCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-17T22:13:10.024169" elapsed="1.800978"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:09.291542" elapsed="2.533822"/>
+</kw>
+<kw name="Verificar se o post foi pesquisado ao aparecer a mensagem &quot;Mostrando postagens que correspondem à pesquisa por Novo Curso: Robot Framework com Playwright e GitHub Actions&quot;" owner="ResourceBlog" source_name="Verificar se o post foi pesquisado ao aparecer a mensagem &quot;${MESSAGE_DISPLAYED}&quot;">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:11.900284" level="INFO">Current page contains text 'Mostrando postagens que correspondem à pesquisa por Novo Curso: Robot Framework com Playwright e GitHub Actions'.</msg>
+<arg>${MESSAGE_DISPLAYED}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-04-17T22:13:11.826912" elapsed="0.073599"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:11.826009" elapsed="0.074841"/>
+</kw>
+<kw name="Fechar o navegador" owner="ResourceBlog">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-17T22:13:11.904589" elapsed="0.292770"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:11.902260" elapsed="0.295790"/>
+</kw>
+<kw name="Fechar o navegador" owner="ResourceBlog" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-17T22:13:12.201391" elapsed="0.000381"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:12.199803" elapsed="0.002164"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:02.335283" elapsed="9.866847"/>
+</test>
+<test id="s1-t2" name="Caso de Teste 02: Ler um post" line="13">
+<kw name="Acessar a página do blog" owner="ResourceBlog" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:12.204183" level="INFO">Opening browser 'Chrome' to base url 'https://robotizandotestes.blogspot.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-17T22:13:12.203850" elapsed="6.931676"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:19.155595" level="INFO">Page title is 'Robotizando Testes'.</msg>
+<arg>Robotizando Testes</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-04-17T22:13:19.136044" elapsed="0.019792"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:12.203391" elapsed="6.952803"/>
+</kw>
+<kw name="Acessar o post &quot;Novo Curso: Robot Framework com Playwright e GitHub Actions&quot;" owner="ResourceBlog" source_name="Acessar o post &quot;${POST_TITLE}&quot;">
+<kw name="Pesquisar por um post com &quot;${POST_TITLE}&quot;" owner="ResourceBlog" source_name="Pesquisar por um post com &quot;${TEXT_SEARCH}&quot;">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_SEARCH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-17T22:13:19.159554" elapsed="0.081626"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:19.242189" level="INFO">Clicking button 'class=search-expand.touch-icon-button'.</msg>
+<arg>${BTN_SEARCH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-17T22:13:19.241745" elapsed="0.178706"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:19.423193" level="INFO">Typing text 'Novo Curso: Robot Framework com Playwright e GitHub Actions' into text field 'name=q'.</msg>
+<arg>${INPUT_SEARCH}</arg>
+<arg>${TEXT_SEARCH}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-17T22:13:19.420961" elapsed="0.490388"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:19.912873" level="INFO">Clicking element 'class=search-action.flat-button'.</msg>
+<arg>${SUBMIT_SEARCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-17T22:13:19.911990" elapsed="1.262430"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:19.158628" elapsed="2.016131"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:21.175905" level="INFO">Clicking link 'Novo Curso: Robot Framework com Playwright e GitHub Actions'.</msg>
+<arg>${POST_TITLE}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-17T22:13:21.175185" elapsed="8.837439"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_SEARCH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-04-17T22:13:30.013791" elapsed="0.044389"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:30.071090" level="INFO">Page title is 'Novo Curso: Robot Framework com Playwright e GitHub Actions'.</msg>
+<arg>${POST_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-04-17T22:13:30.058643" elapsed="0.012608"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:19.157211" elapsed="10.914233"/>
+</kw>
+<kw name="Conferir se a imagem do robô aparece" owner="ResourceBlog">
+<kw name="Page Should Contain Image" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:30.168209" level="INFO">Current page contains image 'xpath=//img[@src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5N1_Bgt36fuAorEpn4j1gHZGjbTRjHVBBRLe1PWKooCSbohE4ZTbij8mx0Bdex5Y1mq3srYBnWzgXXxuWOCjkp2hR4NC_p4sZ2hoe-jFhjau8HgZZosBorNtGYFupFOse4vt4uhv9GstH/s320/robotfw_mark_black_low.png']'.</msg>
+<arg>${LOCATION_IMG_ROBO}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-04-17T22:13:30.072542" elapsed="0.096044"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:30.071964" elapsed="0.096940"/>
+</kw>
+<kw name="Conferir se o texto &quot;O curso básico foi atualizado com conteúdo regravado em 2023!&quot; aparece" owner="ResourceBlog" source_name="Conferir se o texto &quot;${PIECE_OF_TEXT}&quot; aparece">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-04-17T22:13:30.294354" level="INFO">Current page contains text 'O curso básico foi atualizado com conteúdo regravado em 2023!'.</msg>
+<arg>${PIECE_OF_TEXT}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-04-17T22:13:30.176543" elapsed="0.118291"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:30.173937" elapsed="0.121394"/>
+</kw>
+<kw name="Fechar o navegador" owner="ResourceBlog">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-17T22:13:30.298431" elapsed="0.284036"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:30.296190" elapsed="0.286824"/>
+</kw>
+<kw name="Fechar o navegador" owner="ResourceBlog" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-17T22:13:30.584056" elapsed="0.000212"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:30.583575" elapsed="0.000881"/>
+</kw>
+<status status="PASS" start="2024-04-17T22:13:12.202763" elapsed="18.381863"/>
+</test>
+<status status="PASS" start="2024-04-17T22:13:02.160286" elapsed="28.425279"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="TestBlog">TestBlog</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
